@@ -1,0 +1,425 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px; /* Default font size in pixels */
+}
+
+body {
+    position: relative;
+    background: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+}
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* Increase the height to your desired value, e.g., 80px */
+    background: #c5d0de;
+    display: flex;
+    align-items: center;
+    padding: 0 2.5vw;
+}
+
+
+.logo {
+    height: 40px;
+    margin-left: 20px;
+}
+
+/* Toggle Button */
+.toggle-btn {
+    width: 20px;
+    height: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-btn span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #111010;
+}
+
+.toggle-btn span:nth-child(1) {
+    top: 0;
+}
+
+.toggle-btn span:nth-child(3) {
+    top: 100%;
+}
+
+/* Dropdown Styles */
+.dropdown-btn {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 15px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Search Bar */
+.search-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-box {
+    position: relative;
+    max-width: 500px;
+    width: 50%;
+    height: 40px;
+    display: flex;
+}
+
+.search-bar {
+    width: 85%;
+    height: 100%;
+    border: 2px solid #dbdbdb;
+    padding: 20px;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.search-btn {
+    width: 15%;
+    height: 100%;
+    background: #f0f0f0;
+    border: 2px solid #dbdbdb;
+    padding: 5px 0;
+    border-left: none;
+}
+
+.search-btn img {
+    height: 100%;
+}
+
+/* User Options */
+.user-options {
+    height: 35px;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.user-options .icon {
+    height: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.user-dp {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-dp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* filters */
+.filters {
+    position: fixed;
+    left: 0; /* Change this to 0 to span the full width */
+    right: 0; /* Add this to span the full width */
+    top: 60px;
+    height: 60px;
+    background: #fff;
+    border-top: 2px solid #dbdbdb;
+    border-bottom: 2px solid #dbdbdb;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap; /* Prevent line breaks on small screens */
+}
+
+.filters::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-options {
+    flex: 0 0 auto;
+    padding: 10px 15px;
+    border-radius: 50px;
+    background: #f0f0f0;
+    border: 1px solid #dbdbdb;
+    text-transform: capitalize;
+    margin-right: 10px; /* Adjust the margin between filter buttons */
+    color: #242424;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.filter-options.active {
+    color: #fff;
+    background: #242424;
+}
+
+/* Add more CSS styles or adjust margin values as needed */
+
+
+.video-container {
+    width: calc(100% - 15.625rem); /* Responsive width calculation */
+    margin-top: 6rem; /* Reduce the top margin (adjust as needed) */
+    padding: 1.25rem; /* 20px in rem */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); /* Responsive grid */
+    grid-gap: 5rem; /* 10px in rem */
+    overflow-x: hidden;
+}
+
+/* Add more CSS styles or adjust margin values as needed */
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Adjust the number of columns as needed */
+    gap: 10px; /* Adjust the gap between videos */
+}
+
+.video {
+    min-height: 200px;
+    height: auto;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.content {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.channel-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 5px;
+}
+
+.title {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.channel-name {
+    font-size: 12px;
+    margin: 2px 0;
+    color: #979797;
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 60rem) {
+    .navbar {
+        height: 60px;
+    }
+
+    .logo {
+        height: 30px;
+        margin-left: 10px;
+    }
+
+    .search-bar {
+        font-size: 14px;
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(3, 1fr); /* Add this line to create a three-column video grid */
+    }
+
+    /* Add more responsive adjustments as needed */
+}
+
+    /* Add more responsive adjustments as needed */
+
+@media (max-width: 37.5rem) {
+    .navbar {
+        height: 50px;
+    }
+
+    .logo {
+        height: 20px;
+        margin-left: 5px;
+    }
+
+    .search-box {
+        max-width: 450px;
+        width: 60%;
+    }
+    /* Add more responsive adjustments as needed */
+}
+
+@media (max-width: 30rem) {
+    .navbar {
+        height: 60px;
+    }
+
+    .logo {
+        height: 16px;
+        margin-left: 5px;
+        justify-content: center;
+    }
+
+    .user-options {
+        display: none;
+    }
+
+    .search-center {
+        justify-content: flex-end;
+    }
+
+    .search-box {
+        width: auto;
+        margin-right: 20px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .search-btn {
+        border-left: 2px solid #dbdbdb;
+    }
+
+    .video-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 8px;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+
+    .video {
+        width: 100%;
+        height: auto;
+    }
+
+    .filters {
+        display: none;
+    }
+    /* ... (previous mobile view styles) ... */
+
+
+/* Styles for the Recent Videos heading */
+.recent-videos {
+    background-color: #f0f0f0;
+    color: #000000;
+    padding: 20px;
+    text-align: left;
+    margin-top: 5rem;
+}
+
+.recent-videos h2 {
+    margin: 0;
+    border-bottom: 2px solid #000000;
+}
+
+.info {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* Channel Icon */
+.channel-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 5px;
+    float: left;
+}
+
+/* Title */
+.title {
+    overflow: auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0;
+}
+
+/* Channel Name */
+.channel-name {
+    font-size: 12px;
+    margin: 2px 0;
+    color: #979797;
+    clear: both;
+}
+
+.logo {
+    height: 2.5rem;
+    margin: 0 auto;
+    display: block;
+}
+
+.search-box {
+    display: none;
+}
+
+/* Toggle Button */
+.toggle-btn {
+    width: 20px;
+    height: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-btn span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #111010;
+}
+
+/* Show the user dp in mobile view */
+.user-dp {
+    display: block;
+}
+}
